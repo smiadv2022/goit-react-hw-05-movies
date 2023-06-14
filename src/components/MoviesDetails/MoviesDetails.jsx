@@ -37,7 +37,7 @@ const MoviesDetails = () => {
     // }
   }, [movieId, movieIdDetal]);
 
-  // console.log(movieId);
+  console.log(movieId);
   const { poster_path, title, vote_average, overview, genres } = movieIdDetal;
   console.log(overview);
   return (
@@ -60,10 +60,10 @@ const MoviesDetails = () => {
       <div>
         <ul>
           <li>
-            <NavLink to="casts">Cast</NavLink>
+            <NavLink to="/casts">Cast</NavLink>
           </li>
           <li>
-            <NavLink to="reviews">Reviews</NavLink>
+            <NavLink to="/reviews">Reviews</NavLink>
           </li>
         </ul>
       </div>
