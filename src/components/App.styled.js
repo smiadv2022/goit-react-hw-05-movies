@@ -4,13 +4,13 @@ export const Container = styled.div`
   display: flex;
   padding-left: 10px;
   padding-right: 10px;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   margin-left: auto;
   margin-right: auto;
   /* display: grid;
   grid-template-columns: 1fr; */
   flex-direction: column;
-  grid-gap: 16px;
+  /* grid-gap: 16px; */
   padding-bottom: 24px;
   background: grey;
   height: 100vh;

@@ -4,26 +4,32 @@ export const TrandigList = styled.ul`
   padding: 5px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  /* gap: 5px; */
   font-size: 600;
-  marging: 5px;
+  margin: 5px;
+  text-decoration: none;
+  list-style-type: circle;
 `;
 export const TrandigListItem = styled.li`
   display: flex;
+  list-style-type: circle;
+  list-style-position: inside;
+  list-style-type: square;
   gap: 1px;
   align-items: center;
   // width: 100px;
   padding: 5px;
-  font-size: 400;
+  font-weight: 700;
   color: black;
-  line-height: 1rem;
+  line-height: 2rem;
   background-color: transporante;
   border: 1px solid lightgray;
   border-radius: 10px;
   & a {
     color: black;
-    font-size: 500;
-    font-weight: 600;
+
+    font-weight: 700;
+    /* text-decoration: none; */
   }
   &:hover,
   &:focus {
@@ -36,10 +42,11 @@ export const TrandigListItem = styled.li`
   }
 `;
 export const Title = styled.h2`
-  margin: 20px 5px 1rem 5px;
+  margin: 20px 5px 20px 5px;
   color: #111827;
   font-size: 1.5rem;
   line-height: 1rem;
   font-weight: 600;
   letter-spacing: -0.025em;
+  padding-left: 20px;
 `;
