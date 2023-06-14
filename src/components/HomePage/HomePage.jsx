@@ -37,7 +37,7 @@ export const HomePage = () => {
   return (
     <>
       <Container>
-        <Title>Tranding today</Title>
+        <Title>Tranding today:</Title>
 
         <TrandingMoviesList trandingArray={trandingArray} />
       </Container>

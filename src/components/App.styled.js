@@ -13,6 +13,7 @@ export const Container = styled.div`
   /* grid-gap: 16px; */
   padding-bottom: 24px;
   background: grey;
+  background: rgb(225, 223, 223);
   height: 100vh;
 `;
 export const Message = styled.div`

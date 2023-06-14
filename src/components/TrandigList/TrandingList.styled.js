@@ -9,6 +9,7 @@ export const TrandigList = styled.ul`
   margin: 5px;
   text-decoration: none;
   list-style-type: circle;
+  z-index: 1000;
 `;
 export const TrandigListItem = styled.li`
   display: flex;
@@ -41,12 +42,13 @@ export const TrandigListItem = styled.li`
       0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   }
 `;
-export const Title = styled.h2`
+export const Title = styled.h1`
   margin: 20px 5px 20px 5px;
   color: #111827;
-  font-size: 1.5rem;
+  color: blue;
+  font-size: 1118 1.5rem;
   line-height: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.025em;
   padding-left: 20px;
 `;

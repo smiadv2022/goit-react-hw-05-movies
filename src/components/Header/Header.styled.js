@@ -18,8 +18,9 @@ export const HeaderBlock = styled.div`
 export const HeaderWrapper = styled.div`
   /* max-width: 1200px; */
 
-  padding: 10px;
-
+  padding: 15px;
+  font-weight: 600;
+  font-size: 24px;
   justify-content: center;
   margin-left: 30px;
   color: white;
@@ -27,7 +28,8 @@ export const HeaderWrapper = styled.div`
   /* padding-bottom: 24px; */
   & a {
     color: white;
-    padding: 10px;
+    padding: 15px;
+    margin: 20px;
   }
   & a:hover {
     background: white;
