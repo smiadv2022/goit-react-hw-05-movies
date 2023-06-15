@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { NavLink } from 'react-bootstrap';
 import { Outlet, useParams } from 'react-router-dom';
+import { Movie } from './MoviesDetails.styles';
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
@@ -59,7 +60,7 @@ const MoviesDetails = () => {
         }
       />
       {/* </Container> */}
-      <div>
+      <Movie>
         <ul>
           <li>
             <NavLink to="casts">Cast</NavLink>
@@ -68,7 +69,7 @@ const MoviesDetails = () => {
             <NavLink to="reviews">Reviews</NavLink>
           </li>
         </ul>
-      </div>
+      </Movie>
       <Outlet />
     </>
   );
