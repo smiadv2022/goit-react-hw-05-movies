@@ -9,7 +9,7 @@ import {
   SearchFormInput,
   SearchFormButton,
 } from './SearchBar.styled';
-import { Container } from 'components/App.styled';
+// import { Container } from 'components/App.styled';
 
 export const SearchbarForm = ({ onSubmit }) => {
   const [searchText, setSearchText] = useState('');

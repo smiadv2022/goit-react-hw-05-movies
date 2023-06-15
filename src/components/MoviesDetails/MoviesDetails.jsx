@@ -1,5 +1,5 @@
 import { getMovieInfo } from 'components/Api/Api';
-import { Container } from 'components/App.styled';
+// import { Container } from 'components/App.styled';
 import MainInfo from 'components/MainMovieInfo/MainInfo';
 import React from 'react';
 import { useEffect } from 'react';
