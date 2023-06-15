@@ -12,11 +12,11 @@ export const TrandigList = styled.ul`
   z-index: 1000;
 `;
 export const TrandigListItem = styled.li`
-  display: flex;
+  /* display: flex; */
   list-style-type: circle;
   list-style-position: inside;
-  list-style-type: square;
-  gap: 1px;
+  /* list-style-type: square; */
+  /* gap: 1px; */
   align-items: center;
   // width: 100px;
   padding: 5px;
@@ -28,8 +28,9 @@ export const TrandigListItem = styled.li`
   border-radius: 10px;
   & a {
     color: black;
-
+    width: 100%;
     font-weight: 700;
+    /* background: red; */
     /* text-decoration: none; */
   }
   &:hover,

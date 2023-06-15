@@ -6,7 +6,10 @@ export const Movie = styled.div`
   /* flex-direction: column; */
   /* gap: 5px; */
   font-size: 600;
+  max-width: 1200px;
   margin: 5px;
+  margin-right: auto;
+  margin-left: auto;
   border: 1px solid blue;
 `;
 export const MoviePoster = styled.div`
@@ -22,7 +25,7 @@ export const MoviePoster = styled.div`
 export const MovieAbout = styled.div`
   padding: 5px;
   display: flex;
-  /* width: 75%; */
+  width: 100%;
   flex-direction: column;
   /* gap: 5px; */
   font-size: 600;
@@ -33,6 +36,7 @@ export const MovieAbout = styled.div`
     margin: 0;
     padding: 10px;
     margin-bottom: 24px;
+    z-index: 2000;
   }
   & h2 {
     /* color: blue; */
@@ -43,6 +47,7 @@ export const MovieAbout = styled.div`
     /* color: blue; */
     margin: 0;
     padding: 0;
+    text-decoration: underline;
   }
   & h4 {
     /* color: blue; */

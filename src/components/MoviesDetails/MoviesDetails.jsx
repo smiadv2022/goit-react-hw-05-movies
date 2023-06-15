@@ -17,15 +17,15 @@ const MoviesDetails = () => {
       // setIsLoading(true);
       try {
         const response = await getMovieInfo({ movieId });
-        console.log('rrr', response);
+        // console.log('rrr', response);
         setMovieIdDetal(response);
-        console.log('rrr.detal', movieIdDetal);
+        // console.log('rrr.detal', movieIdDetal);
 
         if (!response) {
           throw new Error(`Sorry, no movies from trandig day!`);
         }
         // setMovieIdDetal(response);
-        console.log('movieIdDetal', movieIdDetal.title);
+        // console.log('movieIdDetal', movieIdDetal.title);
       } catch (error) {
         // toast.info('Sorry, no photo from: "${search}!"');
 
@@ -37,11 +37,12 @@ const MoviesDetails = () => {
     // }
   }, [movieId, movieIdDetal]);
 
-  console.log(movieId);
+  // console.log(movieId);
   const { poster_path, title, vote_average, overview, genres } = movieIdDetal;
-  console.log(overview);
+  // console.log(overview);
   return (
-    <Container>
+    <>
+      {/* <Container> */}
       <MainInfo
         posterPath={
           poster_path
@@ -57,18 +58,19 @@ const MoviesDetails = () => {
             : ''
         }
       />
+      {/* </Container> */}
       <div>
         <ul>
           <li>
-            <NavLink to="/casts">Cast</NavLink>
+            <NavLink to="casts">Cast</NavLink>
           </li>
           <li>
-            <NavLink to="/reviews">Reviews</NavLink>
+            <NavLink to="reviews">Reviews</NavLink>
           </li>
         </ul>
       </div>
       <Outlet />
-    </Container>
+    </>
   );
 };
 

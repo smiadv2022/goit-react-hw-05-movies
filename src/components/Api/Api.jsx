@@ -40,7 +40,7 @@ export async function getMoviesTranding() {
 export async function getMovieCasts({ movieId }) {
   // search = 'cat';
   const response = await fetch(
-    `${BASE_URL}movie/${movieId}?api_key=${API_KEY}`
+    `${BASE_URL}movie/${movieId}/credits?api_key=${API_KEY}`
   );
 
   if (response.ok) {
@@ -50,13 +50,14 @@ export async function getMovieCasts({ movieId }) {
   }
 }
 
-export async function getMovieReviews(movieId) {
-  try {
-    const response = await fetch(
-      `${BASE_URL}movie/${movieId}/reviews?api_key=${API_KEY}`
-    );
-    return response.data;
-  } catch (error) {
-    console.error(error);
+export async function getMovieReviews({ movieId }) {
+  const response = await fetch(
+    `${BASE_URL}movie/${movieId}/reviews?api_key=${API_KEY}`
+  );
+
+  if (response.ok) {
+    return response.json();
+  } else {
+    throw new Error(`Smth went wrong...`);
   }
 }
