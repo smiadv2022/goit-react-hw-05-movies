@@ -1,6 +1,6 @@
 import React from 'react';
-import { HeaderBlock, HeaderWrapper } from './Header.styled';
-import { NavLink } from 'react-router-dom';
+import { HeaderBlock, HeaderWrapper, NavLinkStyled } from './Header.styled';
+// import { NavLink } from 'react-router-dom';
 // import { Container } from 'components/App.styled';
 
 const Header = () => {
@@ -8,11 +8,11 @@ const Header = () => {
     <HeaderBlock>
       {/* <span>Navbar</span> */}
       <HeaderWrapper>
-        <NavLink aria-current="page" to="/">
+        <NavLinkStyled aria-current="page" to="/">
           Home
-        </NavLink>
+        </NavLinkStyled>
 
-        <NavLink to="/movies">Movies</NavLink>
+        <NavLinkStyled to="/movies">Movies</NavLinkStyled>
       </HeaderWrapper>
     </HeaderBlock>
   );

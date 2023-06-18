@@ -1,16 +1,29 @@
-import { getMovieInfo } from 'components/Api/Api';
-// import { Container } from 'components/App.styled';
+import { getMovieInfo } from 'Services/Api/Api';
+
 import MainInfo from 'components/MainMovieInfo/MainInfo';
-import React from 'react';
-import { useEffect } from 'react';
+
+import { useEffect, useRef } from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-bootstrap';
-import { Outlet, useParams } from 'react-router-dom';
+import { BsArrow90DegLeft } from 'react-icons/bs';
+
+import {
+  Link,
+  // Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import { Movie } from './MoviesDetails.styles';
+import { Container } from 'components/App.styled';
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
+  const location = useLocation();
+  const goBackLink = location.state?.from ?? '/';
+  // const goBackLink = useRef(location.state?.from ?? '/');
   // const location = useLocation();
+
   const [movieIdDetal, setMovieIdDetal] = useState({});
 
   useEffect(() => {
@@ -19,31 +32,34 @@ const MoviesDetails = () => {
       try {
         const response = await getMovieInfo({ movieId });
         // console.log('rrr', response);
-        setMovieIdDetal(response);
-        // console.log('rrr.detal', movieIdDetal);
 
         if (!response) {
           throw new Error(`Sorry, no movies from trandig day!`);
         }
-        // setMovieIdDetal(response);
-        // console.log('movieIdDetal', movieIdDetal.title);
+        setMovieIdDetal(response);
       } catch (error) {
         // toast.info('Sorry, no photo from: "${search}!"');
 
         console.error(error);
       }
     };
-    // if (search !== '') {
-    fnFetch();
-    // }
+    if (movieId !== '') {
+      fnFetch();
+    }
   }, [movieId, movieIdDetal]);
 
-  // console.log(movieId);
   const { poster_path, title, vote_average, overview, genres } = movieIdDetal;
-  // console.log(overview);
+
   return (
     <>
-      {/* <Container> */}
+      <Container>
+        {/* <Link to={goBackLink.current}> */}
+        <Link to={goBackLink}>
+          <h4>
+            <BsArrow90DegLeft /> GO BACK
+          </h4>
+        </Link>
+      </Container>
       <MainInfo
         posterPath={
           poster_path
@@ -63,10 +79,14 @@ const MoviesDetails = () => {
       <Movie>
         <ul>
           <li>
-            <NavLink to="casts">Cast</NavLink>
+            <NavLink to="casts">
+              <h3>Cast</h3>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="reviews">Reviews</NavLink>
+            <NavLink to="reviews">
+              <h3>Reviews</h3>
+            </NavLink>
           </li>
         </ul>
       </Movie>

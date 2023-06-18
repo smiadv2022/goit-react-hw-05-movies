@@ -1,9 +1,9 @@
 // import { Container } from './App.styled';
-import { Route, Routes } from 'react-router-dom';
-import { HomePage } from './HomePage/HomePage';
-import { Movies } from './Movies/Movies';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { HomePage } from '../Page/HomePage/HomePage';
+import { Movies } from '../Page/Movies/Movies';
 import Layout from './Layout/Layout';
-import MoviesDetails from './MoviesDetails/MoviesDetails';
+import MoviesDetails from '../Page/MoviesDetails/MoviesDetails';
 import Casts from './Casts/Casts';
 import Reviews from './Reviews/Reviews';
 // import ExtraInfo from './ExtraInfo/ExtraInfo';
@@ -19,7 +19,8 @@ export const App = () => {
           <Route path="reviews" element={<Reviews />} />
         </Route>
 
-        <Route path="*" element={<div> Nothing found </div>} />
+        {/* <Route path="*" element={<div> Nothing found </div>} /> */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
   );

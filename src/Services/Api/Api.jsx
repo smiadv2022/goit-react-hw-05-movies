@@ -2,9 +2,10 @@ const BASE_URL = 'https://api.themoviedb.org/3/';
 
 const API_KEY = '8aba4e3419a44727b7eb66f35fce4fa2';
 
-export async function getMoviesSearch({ search = 'batman', page = 1 }) {
+export async function getMoviesSearch(search, page) {
+  // console.log(page, '___________________', search);
   const response = await fetch(
-    `${BASE_URL}search/movie?query=${search}&api_key=${API_KEY}`
+    `${BASE_URL}search/movie?query=${search}&page=${page}&api_key=${API_KEY}`
   );
 
   if (response.ok) {

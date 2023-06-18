@@ -90,3 +90,46 @@ export const SearchFormInput = styled.input`
     font-size: 18px;
   }
 `;
+export const Button = styled.button`
+  padding: 8px 16px;
+  border-radius: 2px;
+  background-color: #3f51b5;
+  background-color: #3f51b5;
+  background-color: #303f9f;
+  background-color: #3f51b5;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  display: inline-block;
+  color: black;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  min-width: 180px;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.5),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.54), 0px 1px 5px 0px rgba(0, 0, 0, 0.52);
+  &:hover,
+  &:focus {
+    background-color: #303f9f;
+    background-color: blue;
+    background-color: #3f51b5;
+    background-color: #3f51b5;
+    color: white;
+  }
+  &:disabled {
+    background-color: #303f9f;
+    background: rgb(236, 236, 242);
+    color: white;
+    cursor: not-allowed;
+  }
+`;

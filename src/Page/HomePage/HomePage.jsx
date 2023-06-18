@@ -1,6 +1,7 @@
 // import Header from 'components/Header/Header';
-import { getMoviesTranding } from 'components/Api/Api';
+import { getMoviesTranding } from 'Services/Api/Api';
 import { Container } from 'components/App.styled';
+// import { SearchFormButton } from 'components/SearchBar/SearchBar.styled';
 import { TrandingMoviesList } from 'components/TrandigList/TrandingList';
 import { Title } from 'components/TrandigList/TrandingList.styled';
 

@@ -11,6 +11,12 @@ export const Movie = styled.div`
   margin-right: auto;
   margin-left: auto;
   border: 1px solid blue;
+  & h3 {
+    color: black;
+  }
+  & ul h3 {
+    color: blue;
+  }
 `;
 export const MoviePoster = styled.div`
   padding: 5px;

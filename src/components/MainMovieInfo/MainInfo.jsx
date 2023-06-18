@@ -2,7 +2,7 @@ import {
   Movie,
   MovieAbout,
   MoviePoster,
-} from 'components/MoviesDetails/MoviesDetails.styles';
+} from 'Page/MoviesDetails/MoviesDetails.styles';
 import React from 'react';
 
 const MainInfo = ({ posterPath, title, popularity, overview, genres }) => {

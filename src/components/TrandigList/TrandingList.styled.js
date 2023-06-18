@@ -10,6 +10,7 @@ export const TrandigList = styled.ul`
   text-decoration: none;
   list-style-type: circle;
   z-index: 1000;
+  /* padding-bottom: 40px; */
 `;
 export const TrandigListItem = styled.li`
   /* display: flex; */
@@ -39,6 +40,7 @@ export const TrandigListItem = styled.li`
     background-color: blue;
     background-color: #3f51b5;
     background-color: #303f9f;
+    background-color: #fff;
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
       0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   }

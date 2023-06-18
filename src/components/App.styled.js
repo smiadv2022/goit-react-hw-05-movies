@@ -4,6 +4,9 @@ export const Container = styled.div`
   display: flex;
   padding-left: 10px;
   padding-right: 10px;
+  /* padding-bottom: 40px; */
+  /* position: fixed;
+  top: 60px; */
   /* justify-content: space-around; */
   margin-left: auto;
   margin-right: auto;
@@ -11,10 +14,11 @@ export const Container = styled.div`
   grid-template-columns: 1fr; */
   flex-direction: column;
   /* grid-gap: 16px; */
-  padding-bottom: 24px;
+  /* padding-bottom: 24px; */
+  /* text-align: center; */
   background: grey;
   background: rgb(225, 223, 223);
-  height: 100vh;
+  /* height: 100%; */
 `;
 export const Message = styled.div`
   padding-left: 10px;

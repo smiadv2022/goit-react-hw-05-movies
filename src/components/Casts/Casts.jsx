@@ -1,8 +1,5 @@
-import { getMovieCasts } from 'components/Api/Api';
-import {
-  Movie,
-  MoviePoster,
-} from 'components/MoviesDetails/MoviesDetails.styles';
+import { getMovieCasts } from 'Services/Api/Api';
+import { Movie, MoviePoster } from 'Page/MoviesDetails/MoviesDetails.styles';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -19,9 +16,9 @@ const Casts = () => {
       // setIsLoading(true);
       try {
         const response = await getMovieCasts({ movieId });
-        console.log('ccc', response);
+        // console.log('ccc', response);
         setCasts(response.cast);
-        console.log('ccc.detalcostst', response.cast);
+        // console.log('ccc.detalcostst', response.cast);
 
         if (!response) {
           throw new Error(`Sorry, no movies from trandig day!`);
@@ -60,12 +57,12 @@ const Casts = () => {
   // if (!casts) {
   //   return;
   // }
-  console.log('casts ', movieId);
+  // console.log('casts ', movieId);
   return (
     <div>
       <Movie>
         {/* {' '} */}
-        Casts:
+        <h3>Casts:</h3>
         <ul>
           {casts.map(({ profile_path, name, character, id }) => (
             <li key={id}>

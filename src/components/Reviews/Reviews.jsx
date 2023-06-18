@@ -1,5 +1,5 @@
-import { getMovieReviews } from 'components/Api/Api';
-import { Movie } from 'components/MoviesDetails/MoviesDetails.styles';
+import { getMovieReviews } from 'Services/Api/Api';
+import { Movie } from 'Page/MoviesDetails/MoviesDetails.styles';
 // import { TrandingMoviesList } from 'components/TrandigList/TrandingList';
 // import {
 //   TrandigList,
@@ -17,15 +17,12 @@ const Reviews = () => {
       // setIsLoading(true);
       try {
         const response = await getMovieReviews({ movieId });
-        console.log('rrr', response);
-        setReviews(response.results);
-        console.log('rrr.detalrew', reviews);
+        // console.log('rrr', response);
 
         if (!response) {
           throw new Error(`Sorry, no movies from trandig day!`);
         }
-        // setMovieIdDetal(response);
-        // console.log('movieIdDetal', movieIdDetal.title);
+        setReviews(response.results);
       } catch (error) {
         // toast.info('Sorry, no photo from: "${search}!"');
 
@@ -39,13 +36,13 @@ const Reviews = () => {
   if (!reviews) {
     return;
   }
-  console.log('cReviews ', reviews.length);
+
   const countFind = reviews.length;
-  // console.log('cRevID ', rev[0].id);
+
   return (
     <>
       <Movie>
-        Reviews :
+        <h3>Reviews:</h3>
         {countFind > 0 ? (
           <ul>
             {reviews.map(rev => (
@@ -56,7 +53,12 @@ const Reviews = () => {
             ))}
           </ul>
         ) : (
-          <p>Not found reviews</p>
+          <h4>
+            {' '}
+            <br />
+            <br />
+            Not found reviews{' '}
+          </h4>
         )}
       </Movie>
       ;
