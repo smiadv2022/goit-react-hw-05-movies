@@ -15,7 +15,7 @@ export const TrandingMoviesList = ({ trandingArray }) => {
         {trandingArray.map(movie => (
           <TrandigListItem key={movie.id}>
             <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-              {movie.title}
+              {movie.title} - ({movie.id})
             </Link>
           </TrandigListItem>
         ))}

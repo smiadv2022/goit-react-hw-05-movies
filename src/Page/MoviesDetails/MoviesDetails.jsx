@@ -2,7 +2,7 @@ import { getMovieInfo } from 'Services/Api/Api';
 
 import MainInfo from 'components/MainMovieInfo/MainInfo';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useState } from 'react';
 import { BsArrow90DegLeft } from 'react-icons/bs';
 
@@ -20,8 +20,8 @@ import { Container } from 'components/App.styled';
 const MoviesDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
-  const goBackLink = location.state?.from ?? '/';
-  // const goBackLink = useRef(location.state?.from ?? '/');
+  // const goBackLink = location.state?.from ?? '/';
+  const goBackLink = useRef(location.state?.from ?? '/');
 
   const [movieIdDetal, setMovieIdDetal] = useState({});
 
@@ -52,8 +52,8 @@ const MoviesDetails = () => {
   return (
     <>
       <Container>
-        {/* <Link to={goBackLink.current}> */}
-        <Link to={goBackLink}>
+        <Link to={goBackLink.current}>
+          {/* <Link to={goBackLink}> */}
           <h4>
             <BsArrow90DegLeft /> GO BACK
           </h4>
