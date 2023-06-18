@@ -2,7 +2,7 @@ import { getMovieInfo } from 'Services/Api/Api';
 
 import MainInfo from 'components/MainMovieInfo/MainInfo';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { BsArrow90DegLeft } from 'react-icons/bs';
 
@@ -22,7 +22,6 @@ const MoviesDetails = () => {
   const location = useLocation();
   const goBackLink = location.state?.from ?? '/';
   // const goBackLink = useRef(location.state?.from ?? '/');
-  // const location = useLocation();
 
   const [movieIdDetal, setMovieIdDetal] = useState({});
 
