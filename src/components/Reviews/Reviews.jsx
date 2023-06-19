@@ -29,9 +29,10 @@ const Reviews = () => {
         console.error(error);
       }
     };
-
-    fnFetch();
-  }, [movieId, reviews]);
+    if (movieId !== '') {
+      fnFetch();
+    }
+  }, [movieId]);
 
   if (!reviews) {
     return;

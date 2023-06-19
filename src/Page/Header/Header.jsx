@@ -5,6 +5,7 @@ import { HeaderBlock, HeaderWrapper, NavLinkStyled } from './Header.styled';
 
 const Header = () => {
   return (
+    // <div>
     <HeaderBlock>
       {/* <span>Navbar</span> */}
       <HeaderWrapper>
@@ -15,6 +16,7 @@ const Header = () => {
         <NavLinkStyled to="/movies">Movies</NavLinkStyled>
       </HeaderWrapper>
     </HeaderBlock>
+    // </div>
   );
 };
 

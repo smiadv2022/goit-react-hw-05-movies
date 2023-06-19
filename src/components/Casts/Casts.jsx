@@ -31,33 +31,15 @@ const Casts = () => {
         console.error(error);
       }
     };
-    // if (search !== '') {
-    fnFetch();
-    // }
+    if (movieId !== '') {
+      fnFetch();
+    }
   }, [movieId]);
 
   if (!casts) {
     return;
   }
 
-  // useEffect(() => {
-  //   const fetchCast = async () => {
-  //     try {
-  //       const response = await getMovieCasts({ movieId });
-  //       setCasts(response.casts);
-  //       // console.log('casts response', response);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
-  //   fetchCast();
-  // }, [movieId]);
-
-  // if (!casts) {
-  //   return;
-  // }
-  // console.log('casts ', movieId);
   return (
     <div>
       <Movie>
