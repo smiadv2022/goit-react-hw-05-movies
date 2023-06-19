@@ -56,7 +56,7 @@ export const Movies = () => {
     if (query !== '') {
       fnFetch();
     }
-  }, [searchParams, query]);
+  }, [searchParams]);
   // console.log(searchParams.get('query'), 'simagessssssssss', images);
   return (
     <div>

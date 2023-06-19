@@ -45,7 +45,7 @@ const MoviesDetails = () => {
     if (movieId !== '') {
       fnFetch();
     }
-  }, [movieId, movieIdDetal]);
+  }, [movieId]);
 
   const { poster_path, title, vote_average, overview, genres } = movieIdDetal;
 
