@@ -43,15 +43,13 @@ export const Movies = () => {
         const response = await getMoviesSearch(query, currentPage);
 
         if (response.results.length === 0) {
-          throw new Error(`Sorry, no movies fo query!`);
+          throw new Error(`Sorry, no movies for query!`);
         }
 
-   
         setImages(prevImages => [...prevImages, ...response.results]);
 
         setTotalPages(response.total_pages);
       } catch (error) {
-     
         setError(error);
         setTotalPages(0);
         console.error(error);
