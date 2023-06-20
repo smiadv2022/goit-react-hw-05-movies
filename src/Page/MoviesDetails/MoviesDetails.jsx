@@ -18,6 +18,7 @@ import {
 } from 'react-router-dom';
 import { Movie } from './MoviesDetails.styles';
 import { Container } from 'components/App.styled';
+import { Loader } from 'components/Loader/Loader';
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
@@ -25,25 +26,34 @@ const MoviesDetails = () => {
 
   const goBackLink = useRef(location.state?.from ?? '/');
 
-  const [movieIdDetal, setMovieIdDetal] = useState({});
-
+  const [movieIdDetal, setMovieIdDetal] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     const fnFetch = async () => {
       try {
+        setIsLoading(true);
         const response = await getMovieInfo({ movieId });
 
         if (!response) {
           throw new Error(`Sorry, no movies from trandig day!`);
         }
+
         setMovieIdDetal(response);
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     };
     if (movieId !== '') {
       fnFetch();
     }
   }, [movieId]);
+  // console.log(movieIdDetal);
+  if (!movieIdDetal) {
+    return;
+  }
+
   const { poster_path, title, vote_average, overview, genres } = movieIdDetal;
 
   return (
@@ -71,6 +81,7 @@ const MoviesDetails = () => {
             : ''
         }
       />
+      {isLoading && <Loader />}
       {/* </Container> */}
       <Movie>
         <ul>

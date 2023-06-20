@@ -1,8 +1,8 @@
 import React from 'react';
-import { TrandigList, TrandigListItem } from './TrandingList.styled';
+import { TrandigList, TrandigListItem } from './MovieList.styled';
 import { Link, useLocation } from 'react-router-dom';
 
-export const TrandingMoviesList = ({ trandingArray, page }) => {
+export const MoviesList = ({ trandingArray, page }) => {
   const location = useLocation();
 
   return (

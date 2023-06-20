@@ -1,7 +1,7 @@
 import { getMoviesSearch } from 'Services/Api/Api';
 import { Container } from 'components/App.styled';
 import { SearchbarForm } from 'components/SearchBar/SearchBar';
-import { TrandingMoviesList } from 'components/TrandigList/TrandingList';
+import { MoviesList } from 'components/MovieList/MovieList';
 
 import React, { useEffect } from 'react';
 import { useState } from 'react';
@@ -35,6 +35,7 @@ export const Movies = () => {
   useEffect(() => {
     const query = searchParams.get('query');
     const currentPage = searchParams.get('page');
+
     setError(null);
     if (!query) return;
     const fnFetch = async () => {
@@ -70,7 +71,7 @@ export const Movies = () => {
           value={searchParams.get('query')}
         />
         {error && <h2>{error.message}</h2>}
-        <TrandingMoviesList trandingArray={images} />
+        <MoviesList trandingArray={images} />
 
         {isLoading && <Loader />}
         {currentPage < totalPages && (
