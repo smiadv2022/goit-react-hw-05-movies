@@ -14,18 +14,14 @@ const Reviews = () => {
 
   useEffect(() => {
     const fnFetch = async () => {
-      // setIsLoading(true);
       try {
         const response = await getMovieReviews({ movieId });
-        // console.log('rrr', response);
 
         if (!response) {
           throw new Error(`Sorry, no movies from trandig day!`);
         }
         setReviews(response.results);
       } catch (error) {
-        // toast.info('Sorry, no photo from: "${search}!"');
-
         console.error(error);
       }
     };

@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Button } from './Movies.styled';
 import { Loader } from 'components/Loader/Loader';
+// import { toast } from 'react-toastify';
 
 export const Movies = () => {
   // const [search, setSearch] = useState('');
@@ -16,6 +17,7 @@ export const Movies = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = searchParams.get('page');
+  const [error, setError] = useState(null);
   // const page = 1;
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,29 +30,30 @@ export const Movies = () => {
   const onClick = () => {
     setSearchParams({ query: query, page: String(Number(currentPage) + 1) });
   };
-  const query = searchParams.get('query');
+  const query = searchParams.get('query') ?? '';
 
   useEffect(() => {
     const query = searchParams.get('query');
     const currentPage = searchParams.get('page');
-
+    setError(null);
     if (!query) return;
     const fnFetch = async () => {
       try {
         setIsLoading(true);
         const response = await getMoviesSearch(query, currentPage);
-        // console.log('rrr.results', response.results.length);
+
         if (response.results.length === 0) {
           throw new Error(`Sorry, no movies fo query!`);
         }
 
-        // console.log('currentPag', currentPage);
+   
         setImages(prevImages => [...prevImages, ...response.results]);
 
         setTotalPages(response.total_pages);
       } catch (error) {
-        // toast.info('Sorry, no photo from: "${search}!"');
-
+     
+        setError(error);
+        setTotalPages(0);
         console.error(error);
       } finally {
         setIsLoading(false);
@@ -68,7 +71,7 @@ export const Movies = () => {
           onSubmit={handleSearch}
           value={searchParams.get('query')}
         />
-
+        {error && <h2>{error.message}</h2>}
         <TrandingMoviesList trandingArray={images} />
 
         {isLoading && <Loader />}

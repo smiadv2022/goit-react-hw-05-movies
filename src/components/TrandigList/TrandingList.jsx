@@ -1,14 +1,9 @@
 import React from 'react';
 import { TrandigList, TrandigListItem } from './TrandingList.styled';
 import { Link, useLocation } from 'react-router-dom';
-// import { SearchFormButton } from 'components/SearchBar/SearchBar.styled';
 
 export const TrandingMoviesList = ({ trandingArray, page }) => {
   const location = useLocation();
-  // const backLinkHref = location.state;
-  // console.log('LocationM', location.pathname, 'path');
-  // console.log('LocationM', location.from, 'from');
-  // console.log('nextlisttttttttttttt', trandingArray);
 
   return (
     <>

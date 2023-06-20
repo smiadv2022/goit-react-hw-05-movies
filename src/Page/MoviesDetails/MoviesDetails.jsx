@@ -22,29 +22,21 @@ import { Container } from 'components/App.styled';
 const MoviesDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
-  // const goBackLink = location.state?.from ?? '/';
+
   const goBackLink = useRef(location.state?.from ?? '/');
 
   const [movieIdDetal, setMovieIdDetal] = useState({});
 
-  // const onClickBack = () => {
-  //   console.log(goBackLink);
-  //   return <Navigate to={goBackLink.current} replace />;
-  // };
   useEffect(() => {
     const fnFetch = async () => {
-      // setIsLoading(true);
       try {
         const response = await getMovieInfo({ movieId });
-        // console.log('rrr', response);
 
         if (!response) {
           throw new Error(`Sorry, no movies from trandig day!`);
         }
         setMovieIdDetal(response);
       } catch (error) {
-        // toast.info('Sorry, no photo from: "${search}!"');
-
         console.error(error);
       }
     };

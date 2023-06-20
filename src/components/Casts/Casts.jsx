@@ -9,25 +9,17 @@ const Casts = () => {
   const [casts, setCasts] = useState();
   const { movieId } = useParams();
 
-  // console.log('movieId??????', movieId);
-
   useEffect(() => {
     const fnFetch = async () => {
       // setIsLoading(true);
       try {
         const response = await getMovieCasts({ movieId });
-        // console.log('ccc', response);
         setCasts(response.cast);
-        // console.log('ccc.detalcostst', response.cast);
 
         if (!response) {
           throw new Error(`Sorry, no movies from trandig day!`);
         }
-        // setMovieIdDetal(response);
-        // console.log('movieIdDetal', movieIdDetal.title);
       } catch (error) {
-        // toast.info('Sorry, no photo from: "${search}!"');
-
         console.error(error);
       }
     };
