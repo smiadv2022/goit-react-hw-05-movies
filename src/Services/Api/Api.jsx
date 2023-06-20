@@ -14,6 +14,7 @@ export async function getMoviesSearch(search, page) {
     throw new Error(`Smth went wrong...`);
   }
 }
+
 export async function getMovieInfo({ movieId }) {
   const response = await fetch(
     `${BASE_URL}movie/${movieId}?api_key=${API_KEY}`

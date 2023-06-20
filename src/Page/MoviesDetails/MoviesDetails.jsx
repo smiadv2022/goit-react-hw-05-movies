@@ -10,8 +10,10 @@ import {
   Link,
   // Link,
   NavLink,
+  // Navigate,
   Outlet,
   useLocation,
+  // useNavigate,
   useParams,
 } from 'react-router-dom';
 import { Movie } from './MoviesDetails.styles';
@@ -25,6 +27,10 @@ const MoviesDetails = () => {
 
   const [movieIdDetal, setMovieIdDetal] = useState({});
 
+  // const onClickBack = () => {
+  //   console.log(goBackLink);
+  //   return <Navigate to={goBackLink.current} replace />;
+  // };
   useEffect(() => {
     const fnFetch = async () => {
       // setIsLoading(true);

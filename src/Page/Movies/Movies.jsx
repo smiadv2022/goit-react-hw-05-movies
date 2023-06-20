@@ -43,7 +43,10 @@ export const Movies = () => {
         if (response.results.length === 0) {
           throw new Error(`Sorry, no movies fo query!`);
         }
+
+        // console.log('currentPag', currentPage);
         setImages(prevImages => [...prevImages, ...response.results]);
+
         setTotalPages(response.total_pages);
       } catch (error) {
         // toast.info('Sorry, no photo from: "${search}!"');
@@ -57,7 +60,7 @@ export const Movies = () => {
       fnFetch();
     }
   }, [searchParams]);
-  // console.log(searchParams.get('query'), 'simagessssssssss', images);
+
   return (
     <div>
       <Container>
@@ -67,6 +70,7 @@ export const Movies = () => {
         />
 
         <TrandingMoviesList trandingArray={images} />
+
         {isLoading && <Loader />}
         {currentPage < totalPages && (
           <Button onClick={onClick}>
